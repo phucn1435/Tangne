@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: radial-gradient(circle, #000000 0%, #0c0032 100%);
+            background-size: cover;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #image-container {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .image {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="show-images">Click Me</button>
+    <div id="image-container">
+        <img class="image" src="368105627_1077817179917603_4769387620710665577_n.jpg">
+        
+        <!-- Thêm các hình ảnh khác vào đây -->
+    </div>
+
+    <script>
+        const button = document.getElementById("show-images");
+        const imageContainer = document.getElementById("image-container");
+        const images = document.querySelectorAll(".image");
+
+        let visible = false;
+
+        button.addEventListener("click", function() {
+            if (visible) {
+                images.forEach(image => image.style.display = "none");
+            } else {
+                images.forEach(image => image.style.display = "block");
+            }
+            visible = !visible;
+        });
+    </script>
+</body>
+</html>
